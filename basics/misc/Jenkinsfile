@@ -1,8 +1,8 @@
 node {
-   def commit_id
+   def oferw5
    stage('step pre') {
      checkout scm
-     sh "git rev-parse --short HEAD > .git/commit-id"                        
+     sh "git rev-parse --short HEAD > .git/oferw5"                        
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
@@ -20,8 +20,8 @@ node {
    }
    stage('docker run') {
      sh label: '', script: '''docker rm docker_test
-      docker run --rm -tid --name docker_test -p 3000 yanivomc/docker-nodejs-demo:latest
-      docker kill docker_test
+     sh "docker run --rm -tid --name docker_test -p 3000 yanivomc/docker-nodejs-demo:latest"
+     sh "docker kill docker_test"
       
       '''
      }
